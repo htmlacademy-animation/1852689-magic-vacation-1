@@ -241,25 +241,31 @@
     display: block;
     color: inherit;
     padding: 0 0.5em 0.5em;
+    /* start */
+    transition: color 250ms linear;
+    /* end */
 
     &::after {
       content: "";
       position: absolute;
       bottom: 0;
-      width: 100%;
+      width: 0;
       height: 2px;
       background-color: $c-light;
-      display: none;
-      left: 0;
+      /* start */
+      right: 0;
+      left: unset;
+      transition: background-color 250ms linear, width 250ms linear;
+      /* end */
 
       @media (max-width: $tablet) and (orientation: portrait) {
-        left: 0;
+        left: unset;
         right: 0;
         background-color: $c-dark;
       }
 
       @media (max-width: $mobile) and (orientation: landscape) {
-        left: 0;
+        left: unset;
         right: 0;
         background-color: $c-dark;
       }
@@ -267,7 +273,11 @@
 
     &.active {
       &::after {
-        display: block;
+        width: 100%;
+        /* start */
+        left: 0;
+        right: unset;
+        /* end */
       }
     }
 
@@ -277,8 +287,11 @@
       outline: none;
 
       &::after {
-        opacity: 1;
+        width: 100%;
         background-color: $c-purple;
+        /* start */
+        left: 0;
+        /* end */
       }
     }
   }
