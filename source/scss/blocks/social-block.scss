@@ -6,6 +6,12 @@
       opacity: 1;
       pointer-events: auto;
     }
+
+    /* Start */
+    .social-block__link {
+      opacity: 1;
+    }
+    /* End */
   }
 }
 
@@ -17,6 +23,9 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
+  /* Start */
+  transition: color 250ms linear, background-color 250ms linear;
+  /* End */
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -35,6 +44,9 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
+    /* Start */
+    transition: width 250ms linear, height 250ms linear;
+    /* End */
   }
 
   svg {
@@ -55,16 +67,24 @@
   }
 
   &:focus {
-    color: $c-purple;
+    color: white;
+    background-color: $c-purple;
     outline: none;
 
     &::before {
       border-color: $c-purple;
+      background-color: $c-purple;
     }
 
     & + .social-block__list {
       opacity: 1;
       pointer-events: auto;
+
+      /* Start */
+      .social-block__link {
+        opacity: 1;
+      }
+      /* End */
     }
   }
 
@@ -168,6 +188,9 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+  /* Start */
+  opacity: 0;
+  /* End */
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -207,6 +230,12 @@
   }
 
   &--fb {
+    /* start */
+    .social-block--active & {
+      transition: opacity 250ms linear 250ms, color 250ms linear, background-color 250ms linear, border-color 250ms linear;
+    }
+    /* end */
+
     svg {
       width: 0.8rem;
       height: 1.7rem;
@@ -219,6 +248,12 @@
   }
 
   &--insta {
+    /* start */
+    .social-block--active & {
+      transition: opacity 250ms linear (250ms * 2), color 250ms linear, background-color 250ms linear, border-color 250ms linear;
+    }
+    /* end */
+
     svg {
       width: 1.5rem;
       height: 1.5rem;
@@ -231,6 +266,12 @@
   }
 
   &--vk {
+    /* start */
+    .social-block--active & {
+      transition: opacity 250ms linear (250ms * 3), color 250ms linear, background-color 250ms linear, border-color 250ms linear;
+    }
+    /* end */
+
     svg {
       width: 1.7rem;
       height: 1rem;

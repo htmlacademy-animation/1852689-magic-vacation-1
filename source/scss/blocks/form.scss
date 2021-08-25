@@ -33,16 +33,26 @@
   flex: none;
   margin-right: 3rem;
   padding: 0 5.6rem;
-  height: 6rem;
   width: calc(100% - 21rem);
+  height: 6rem;
   text-transform: uppercase;
   font: inherit;
   font-size: 2.4rem;
   line-height: 1.2;
   color: $c-dark;
   border: 0;
-  border-radius: 3rem;
+  border-radius: 30rem;
   outline: none;
+  /* start */
+  background: linear-gradient(to right, transparent 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: left bottom;
+  transition: background-position 300ms linear;
+
+  .screen--game.active & {
+    background-position: right bottom;
+  }
+  /* end */
 
   &:focus {
     border: 1px solid $c-purple;
