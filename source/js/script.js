@@ -9,6 +9,14 @@ import form from './modules/form.js';
 import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll';
 
+window.addEventListener(`DOMContentLoaded`, () => {
+  document.querySelector(`body`).classList.add(`load`);
+  document.querySelector(`.js-menu > ul`).children[0].querySelector(`.js-menu-link`).classList.remove(`active`);
+  setTimeout(() => {
+    document.querySelector(`.js-menu > ul`).children[0].querySelector(`.js-menu-link`).classList.add(`active`);
+  }, 250);
+});
+
 // init modules
 mobileHeight();
 slider();

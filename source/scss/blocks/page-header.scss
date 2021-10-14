@@ -21,9 +21,17 @@
 
 .page-header__wrapper {
   @include container;
-  display: flex;
   align-items: center;
   justify-content: space-between;
+  display: flex;
+  // Start
+  opacity: 0;
+  transition: all 500ms cubic-bezier(.4,.88,.57,.91) 250ms;
+
+  body.load & {
+    opacity: 1;
+  }
+  // End
 }
 
 .page-header__logo {
@@ -35,6 +43,14 @@
   padding: 1rem 0;
   width: 10rem;
   color: $c-light;
+  // Start
+  margin-left: -25px;
+  transition: margin 500ms cubic-bezier(.4,.88,.57,.91) 250ms;
+
+  body.load & {
+    margin-left: 0;
+  }
+  // End
 
   @media (min-width: $stop-scaling) {
     top: -5px;
@@ -81,6 +97,14 @@
   background-color: $c-light;
   border-radius: 50%;
   z-index: 1;
+  // Start
+  transform: scale(0.5);
+  transition: transform 300ms cubic-bezier(.52,1.47,.85,1.38) 250ms;
+
+  body.load & {
+    transform: scale(1);
+  }
+  // End
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: block;
@@ -242,7 +266,7 @@
     color: inherit;
     padding: 0 0.5em 0.5em;
     /* start */
-    transition: color 250ms linear;
+    transition: color 250ms ease-in;
     /* end */
 
     &::after {
@@ -255,7 +279,7 @@
       /* start */
       right: 0;
       left: unset;
-      transition: background-color 250ms linear, width 250ms linear;
+      transition: background-color 250ms ease-in, width 250ms ease-in;
       /* end */
 
       @media (max-width: $tablet) and (orientation: portrait) {

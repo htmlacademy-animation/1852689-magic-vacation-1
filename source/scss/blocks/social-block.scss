@@ -24,7 +24,12 @@
   color: $c-dark;
   border-radius: 50%;
   /* Start */
-  transition: color 250ms linear, background-color 250ms linear;
+  transform: scale(0.5);
+  transition: color 250ms ease, background-color 250ms ease, transform 300ms cubic-bezier(.52,1.47,.85,1.38) 250ms;
+
+  body.load & {
+    transform: scale(1);
+  }
   /* End */
 
   @media (max-width: $tablet) and (orientation: portrait) {
@@ -45,7 +50,7 @@
     border: 2px solid $c-light;
     z-index: -1;
     /* Start */
-    transition: width 250ms linear, height 250ms linear;
+    transition: width 250ms ease, height 250ms ease;
     /* End */
   }
 

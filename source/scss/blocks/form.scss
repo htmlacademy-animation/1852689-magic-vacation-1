@@ -47,7 +47,7 @@
   background: linear-gradient(to right, transparent 50%, white 50%);
   background-size: 200% 100%;
   background-position: left bottom;
-  transition: background-position 300ms linear;
+  transition: background-position 600ms cubic-bezier(.49, .56, .5, .91) 50ms;
 
   .screen--game.active & {
     background-position: right bottom;
