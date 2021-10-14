@@ -119,7 +119,7 @@
   /* Start */
   opacity: 0;
   padding-left: 40px;
-  transition: opacity 250ms ease-out, transform 250ms ease-out;
+  transition: opacity 250ms ease, transform 250ms ease;
 
   .screen--story.active .slider__item.swiper-slide-active &,
   .screen--story.active .slider__item.swiper-slide-next & {
