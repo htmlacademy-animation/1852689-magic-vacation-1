@@ -1,4 +1,5 @@
 import throttle from 'lodash/throttle';
+import { log } from 'three';
 
 export default class FullPageScroll {
   constructor() {
@@ -52,14 +53,38 @@ export default class FullPageScroll {
   }
 
   changeVisibilityDisplay() {
+    document.querySelector(`.section-divider`).classList.remove(`play`);
+
+    const nextActiveScreen = this.screenElements[this.activeScreen];
+    let time = 100;
+
     this.screenElements.forEach((screen) => {
-      screen.classList.add(`screen--hidden`);
-      screen.classList.remove(`active`);
+      if (screen.classList.contains(`active`)) {
+        if (screen.classList.contains(`screen--story`)) {
+          if (this.activeScreen === 2) {
+            time = 500;
+            document.querySelector(`.section-divider`).classList.add(`play`);
+
+            setTimeout(() => {
+              screen.classList.add(`screen--hidden`);
+              screen.classList.remove(`active`);
+            }, time);
+          } else {
+            screen.classList.add(`screen--hidden`);
+            screen.classList.remove(`active`);
+          }
+        } else {
+          screen.classList.add(`screen--hidden`);
+          screen.classList.remove(`active`);
+        }
+      }
     });
-    this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
+
+    nextActiveScreen.classList.remove(`screen--hidden`);
+
     setTimeout(() => {
-      this.screenElements[this.activeScreen].classList.add(`active`);
-    }, 100);
+      nextActiveScreen.classList.add(`active`);
+    }, time);
   }
 
   changeActiveMenuItem() {

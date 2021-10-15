@@ -53,6 +53,15 @@
   body.load & {
     bottom: 0;
   }
+
+  body.load .section-divider.play ~ .screen--prizes & {
+    bottom: -5%;
+  }
+
+  body.load .section-divider.play ~ .screen--prizes.active & {
+    bottom: 0;
+    transition-delay: -100ms;
+  }
   // End
 
   @media (max-width: $tablet) and (orientation: portrait) {
