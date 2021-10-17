@@ -40,18 +40,27 @@
 
 .screen__footer {
   display: block;
-  position: absolute;
   left: 0;
   right: 0;
   color: $c-dark;
   background-color: $c-light;
   z-index: 1;
   // Start
-  bottom: -5%;
+  bottom: -80px;
   transition: all 500ms cubic-bezier(.4,.88,.57,.91);
+  position: fixed;
 
   body.load & {
     bottom: 0;
+  }
+
+  body.load .section-divider.play ~ .screen--prizes & {
+    bottom: -80px;
+  }
+
+  body.load .section-divider.play ~ .screen--prizes.active & {
+    bottom: 0;
+    transition-delay: -100ms;
   }
   // End
 

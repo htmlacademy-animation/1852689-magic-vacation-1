@@ -1,0 +1,24 @@
+// vladhaidukkk:start
+.section-divider {
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    width: 100vw;
+    height: 100vh;
+    background-color: #5f458c;
+}
+
+.section-divider.play {
+    top: 0;
+    transition: all 500ms cubic-bezier(.21,.84,.44,.97);
+}
+
+.section-divider.play ~ .screen--prizes .prizes {
+    opacity: 0;
+    transition: all 500ms ease-out 350ms;
+}
+
+.section-divider.play ~ .screen--prizes.active .prizes {
+    opacity: 1;
+}
+// valdhaidukkk:end

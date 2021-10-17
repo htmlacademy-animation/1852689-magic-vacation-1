@@ -11,9 +11,12 @@ import FullPageScroll from './modules/full-page-scroll';
 
 window.addEventListener(`DOMContentLoaded`, () => {
   document.querySelector(`body`).classList.add(`load`);
-  document.querySelector(`.js-menu > ul`).children[0].querySelector(`.js-menu-link`).classList.remove(`active`);
+
+  // Reset active class from active window
+  const activeWindow = document.querySelector(`.js-menu > ul`).querySelector(`.js-menu-link.active`);
+  activeWindow.classList.remove(`active`);
   setTimeout(() => {
-    document.querySelector(`.js-menu > ul`).children[0].querySelector(`.js-menu-link`).classList.add(`active`);
+    activeWindow.classList.add(`active`);
   }, 250);
 });
 
