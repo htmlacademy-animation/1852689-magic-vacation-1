@@ -3048,6 +3048,8 @@ body.load .page-header__toggler {
   margin: auto;
   padding-top: 7rem;
   max-width: 69.6rem;
+  position: relative;
+  z-index: 1;
 }
 @media (min-width: 2000px) {
   .rules__list {
