@@ -3048,8 +3048,7 @@ body.load .page-header__toggler {
   margin: auto;
   padding-top: 7rem;
   max-width: 69.6rem;
-  position: relative;
-  z-index: 1;
+  top: 1rem;
 }
 @media (min-width: 2000px) {
   .rules__list {
@@ -3079,9 +3078,9 @@ body.load .page-header__toggler {
 .rules__item {
   position: relative;
   margin: 0 0 6.2rem;
-  padding-top: 0.6rem;
   padding-left: 6.5rem;
   break-inside: avoid;
+  padding-top: 1.2rem;
 }
 @media (min-width: 2000px) {
   .rules__item {
@@ -3137,7 +3136,7 @@ body.load .page-header__toggler {
   content: counter(li);
   counter-increment: li;
   position: absolute;
-  top: 0;
+  top: 0.6rem;
   left: 0;
   width: 4.5rem;
   height: 4.5rem;
@@ -3213,7 +3212,7 @@ body.load .page-header__toggler {
     opacity: 1;
   }
   to {
-    width: inherit;
+    width: 100%;
     opacity: 1;
   }
 }
@@ -3228,8 +3227,8 @@ body.load .page-header__toggler {
   transform: translateY(-50%);
   right: 0;
   width: 34%;
-  animation: go-btn-shape 250ms ease-out 1200ms forwards;
   opacity: 0;
+  animation: go-btn-shape 250ms ease-out 1200ms forwards;
 }
 @media (min-width: 2000px) {
   .rules__link {
